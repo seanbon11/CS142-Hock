@@ -27,6 +27,7 @@ public class Prompt {
 			System.out.println("1. Create Item"); //FIXME put in item array
 			System.out.println("2. Update Item Values");
 				//FIXME check for item existence
+				//FIXME hello
 				//FIXME jump to other menu with list of things to update
 			System.out.println("3. Calculate Profit Margin");
 			System.out.println("4. Update by Margin");

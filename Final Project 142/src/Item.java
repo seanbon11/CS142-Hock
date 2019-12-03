@@ -22,11 +22,15 @@ public class Item {
 	// 07: Meat Department
 	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
 	/*
-	 * The following fields wouldn't be bad for the sub-classes: Size Number per
-	 * case
+	 * The following fields wouldn't be bad for the sub-classes: 
+	 * Size 
+	 * Number per case
 	 * 
-	 * These might go in their own methods somewhere: Discount price Discount
-	 * duration Cost per unit Profit margin
+	 * These might go in their own methods somewhere: 
+	 * Discount price 
+	 * Discount duration 
+	 * Cost per unit 
+	 * Profit margin 
 	 * 
 	 */
 	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int department) {
@@ -161,7 +165,6 @@ public class Item {
 	public static void updateByMargin(Item I, double desiredMargin) {
 		double cost = I.cost;
 		double decimalMargin = desiredMargin / 100;
-
 		double retailPrice = cost / (1-decimalMargin);
 		I.regularPrice = retailPrice;
 	}

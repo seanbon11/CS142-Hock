@@ -1,0 +1,62 @@
+
+public class item {
+
+	private double cost;
+	private double regularPrice;
+	private String brand;
+	private String description;
+	private int UPC;
+	private int itemCode;
+	private boolean taxable;
+	private String sourceOfSupply;
+	private int department;
+//	Department codes are as follows: 
+//	01: Regular Grocery
+//	02: General Merchandise & Taxable Grocery
+//	03: Dairy
+//	04: Frozen
+//	05: Produce
+//	06: Deli
+//	07: Meat Department
+	
+	
+	/*
+	 * The following fields wouldn't be bad for the sub-classes: 
+	 * Size
+	 * Number per case
+	 * 
+	 * These might go in their own methods somewhere: 
+	 * Discount price
+	 * Discount duration
+	 * Cost per unit
+	 * Profit margin
+	 * 
+	*/
+	
+	
+	item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int department) {
+		this.cost = cost;
+		this.regularPrice = regularPrice;
+		this.brand = brand;
+		this.description = description;
+		this.UPC = UPC;
+		this.itemCode = itemCode;
+		this.taxable = taxable;
+		this.sourceOfSupply = sourceOfSupply;
+		this.department = department;
+	}
+	
+	public double profitMargin(double cost, double regularPrice) {
+		double costRatio = cost / regularPrice;
+		double margin = 1-costRatio;
+		return margin;
+	}
+	
+	public static void updateByMargin(item I, double desiredMargin) {
+		double cost = I.cost;
+		double decimalMargin = desiredMargin / 100;
+		double retailPrice = cost / (1-decimalMargin);
+		I.regularPrice = retailPrice;
+	}
+	
+}

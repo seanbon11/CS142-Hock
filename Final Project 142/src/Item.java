@@ -33,7 +33,7 @@ public class Item {
 	 * Profit margin 
 	 * 
 	 */
-	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int department) {
+	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
 		this.cost = cost;
 		this.regularPrice = regularPrice;
 		this.brand = brand;

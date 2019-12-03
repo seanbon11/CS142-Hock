@@ -10,6 +10,8 @@ public class Prompt {
 		System.out.println("Welcome to Grocery Pricing Management!");
 		System.out.println("What would you like to do?");
 		
+		System.out.println();
+		
 		System.out.println("1. Create Item");
 		System.out.println("2. Update Item Values");
 			//FIXME check for item existence
@@ -22,6 +24,7 @@ public class Prompt {
 		System.out.println("6. Price per Unit");
 			//FIXME prompt for unit size
 		System.out.println("7. Read in Batch File");
+		
 	}
 
 }

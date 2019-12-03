@@ -22,16 +22,12 @@ public class Item {
 	// 07: Meat Department
 	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
 	/*
-	 * The following fields wouldn't be bad for the sub-classes: 
-	 * Size 
-	 * Number per case
-	 * 
-	 * These might go in their own methods somewhere: 
-	 * Discount price 
-	 * Discount duration 
-	 * Cost per unit 
-	 * Profit margin 
-	 * 
+	 * The following fields wouldn't be bad for the sub-classes: Size Number per
+	 * case
+	 
+	 * These might go in their own methods somewhere: Discount price Discount
+	 * duration Cost per unit Profit margin
+	 
 	 */
 	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
 		this.cost = cost;
@@ -41,7 +37,6 @@ public class Item {
 		this.UPC = UPC;
 		this.itemCode = itemCode;
 		this.taxable = taxable;
-		this.liquid = liquid;
 		this.sourceOfSupply = sourceOfSupply;
 		this.department = department;
 		}
@@ -157,15 +152,17 @@ public class Item {
 	//FIXME array of objects
 	
 
-	public double profitMargin(Item I) {
-		double costRatio = this.cost / this.regularPrice;
+	public double profitMargin(double cost, double regularPrice) {
+		double costRatio = cost / regularPrice;
 		double margin = 1 - costRatio;
+		System.out.println(Math.round(margin*1000)/10.0+"%");
 		return margin;
 	}
 
 	public static void updateByMargin(Item I, double desiredMargin) {
 		double cost = I.cost;
 		double decimalMargin = desiredMargin / 100;
+
 		double retailPrice = cost / (1-decimalMargin);
 		I.regularPrice = retailPrice;
 	}
@@ -176,15 +173,8 @@ public class Item {
 	
 	//Given retail price and unit size, find price per unit
 	
-	public String pricePerUnit(double unitSize) {
-		double ppu = regularPrice / unitSize;
-		String output = ""+ppu;
-		if(liquid) {
-			output += "fl. oz.";
-		} else {
-			output += "oz.";
-		}
-		return output;
+	public double pricePerUnit(double unitSize) {
+		return regularPrice / unitSize;
 	}
 	
 	//FIXME On sale

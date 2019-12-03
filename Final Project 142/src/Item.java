@@ -19,6 +19,7 @@ public class Item {
 	// 05: Produce
 	// 06: Deli
 	// 07: Meat Department
+	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
 	/*
 	 * The following fields wouldn't be bad for the sub-classes: Size Number per
 	 * case
@@ -109,12 +110,14 @@ public class Item {
 		this.sourceOfSupply = sourceOfSupply;
 	}
 	
-	public int getDepartment() {
-		return this.department;
+	public String getDepartment() {
+		return dept[this.department-1];
 	}
 	
 	public void setDepartment(int department) {
+		System.out.println("Old department: "+dept[department-1]);
 		this.department = department;
+		System.out.println("New department: "+dept[department-1]);
 	}
 	
 	

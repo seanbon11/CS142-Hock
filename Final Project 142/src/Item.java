@@ -41,6 +41,7 @@ public class Item {
 		this.UPC = UPC;
 		this.itemCode = itemCode;
 		this.taxable = taxable;
+		this.liquid = liquid;
 		this.sourceOfSupply = sourceOfSupply;
 		this.department = department;
 		}

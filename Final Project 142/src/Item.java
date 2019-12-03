@@ -24,7 +24,7 @@ public class Item {
 	/*
 	 * The following fields wouldn't be bad for the sub-classes: Size Number per
 	 * case
-	 * 
+	 
 	 * These might go in their own methods somewhere: Discount price Discount
 	 * duration Cost per unit Profit margin
 	 * 

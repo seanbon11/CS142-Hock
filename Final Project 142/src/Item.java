@@ -27,7 +27,7 @@ public class Item {
 	 
 	 * These might go in their own methods somewhere: Discount price Discount
 	 * duration Cost per unit Profit margin
-	 * 
+	 
 	 */
 	Item(double cost, double regularPrice, String brand, String 
 		description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int 

@@ -30,7 +30,7 @@ public class Item {
 	 * 
 	 */
 	Item(double cost, double regularPrice, String brand, String 
-		description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int 
+		description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int 
 		department) {
 		this.cost = cost;
 		this.regularPrice = regularPrice;

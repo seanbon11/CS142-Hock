@@ -46,6 +46,80 @@ public class item {
 		this.department = department;
 	}
 	
+	item() {}
+	
+	public double getCost() {
+		return this.cost;
+	}
+	
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
+	
+	public double getRegularPrice() {
+		return this.regularPrice;
+	}
+	
+	public void setRegularPrice(double regularPrice) {
+		this.cost = cost;
+	}
+	
+	public String getBrand() {
+		return this.brand;
+	}
+	
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	
+	public String getDescription() {
+		return this.description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public int getUPC() {
+		return this.UPC;
+	}
+	
+	public void setUPC(int UPC) {
+		this.UPC = UPC;
+	}
+	
+	public int getItemCode() {
+		return this.itemCode;
+	}
+	
+	public void setItemCode(int itemCode) {
+		this.itemCode = itemCode;
+	}
+	
+	public boolean getTaxable() {
+		return this.taxable;
+	}
+	
+	public void setTaxable(boolean taxable) {
+		this.taxable = taxable;
+	}
+	
+	public String getSourceOfSupply() {
+		return this.sourceOfSupply;
+	}
+	
+	public void setSourceOfSupply() {
+		this.sourceOfSupply = sourceOfSupply;
+	}
+	
+	public int getDepartment() {
+		return this.department;
+	}
+	
+	public void setDepartment(int department) {
+		this.department = department;
+	}
+	
 	public double profitMargin(double cost, double regularPrice) {
 		double costRatio = cost / regularPrice;
 		double margin = 1-costRatio;

@@ -1,4 +1,5 @@
-public class item {
+
+public class Item {
 
 	private double cost;
 	private double regularPrice;
@@ -9,31 +10,26 @@ public class item {
 	private boolean taxable;
 	private String sourceOfSupply;
 	private int department;
-//	Department codes are as follows: 
-//	01: Regular Grocery
-//	02: General Merchandise & Taxable Grocery
-//	03: Dairy
-//	04: Frozen
-//	05: Produce
-//	06: Deli
-//	07: Meat Department
-	
-	
+
+	// Department codes are as follows:
+	// 01: Regular Grocery
+	// 02: General Merchandise & Taxable Grocery
+	// 03: Dairy
+	// 04: Frozen
+	// 05: Produce
+	// 06: Deli
+	// 07: Meat Department
 	/*
-	 * The following fields wouldn't be bad for the sub-classes: 
-	 * Size
-	 * Number per case
+	 * The following fields wouldn't be bad for the sub-classes: Size Number per
+	 * case
 	 * 
-	 * These might go in their own methods somewhere: 
-	 * Discount price
-	 * Discount duration
-	 * Cost per unit
-	 * Profit margin
+	 * These might go in their own methods somewhere: Discount price Discount
+	 * duration Cost per unit Profit margin
 	 * 
-	*/
-	
-	
-	item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
+	 */
+	Item(double cost, double regularPrice, String brand, String 
+		description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int 
+		department) {
 		this.cost = cost;
 		this.regularPrice = regularPrice;
 		this.brand = brand;
@@ -41,12 +37,13 @@ public class item {
 		this.UPC = UPC;
 		this.itemCode = itemCode;
 		this.taxable = taxable;
-		this.liquid = liquid;
 		this.sourceOfSupply = sourceOfSupply;
 		this.department = department;
-	}
+		}
 	
-	item() {}
+	Item() {}
+	
+	//FIXME regular and weighed
 	
 	public double getCost() {
 		return this.cost;
@@ -104,14 +101,6 @@ public class item {
 		this.taxable = taxable;
 	}
 	
-	public boolean getLiquid() {
-		return this.liquid;
-	}
-	
-	public void setLiquid(boolean liquid) {
-		this.liquid = liquid;
-	}
-	
 	public String getSourceOfSupply() {
 		return this.sourceOfSupply;
 	}
@@ -128,17 +117,40 @@ public class item {
 		this.department = department;
 	}
 	
+	
+	
+	//FIXME add prompt to interact with user
+	//FIXME batch file method
+	//FIXME array of objects
+	
+
 	public double profitMargin(double cost, double regularPrice) {
 		double costRatio = cost / regularPrice;
-		double margin = 1-costRatio;
+		double margin = 1 - costRatio;
 		return margin;
 	}
-	
-	public static void updateByMargin(item I, double desiredMargin) {
+
+	public static void updateByMargin(Item I, double desiredMargin) {
 		double cost = I.cost;
 		double decimalMargin = desiredMargin / 100;
+
 		double retailPrice = cost / (1-decimalMargin);
 		I.regularPrice = retailPrice;
 	}
 	
+	public double salesTotalProfit(double sale, int numItems) {
+		return numItems * (regularPrice * sale);
+	}
+	
+	//Given retail price and unit size, find price per unit
+	
+	public double pricePerUnit(double unitSize) {
+		return regularPrice / unitSize;
+	}
+	
+	//FIXME On sale
 }
+		
+
+	
+

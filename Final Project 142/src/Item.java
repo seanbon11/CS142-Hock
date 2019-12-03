@@ -8,6 +8,7 @@ public class Item {
 	private int UPC;
 	private int itemCode;
 	private boolean taxable;
+	private boolean liquid;
 	private String sourceOfSupply;
 	private int department;
 

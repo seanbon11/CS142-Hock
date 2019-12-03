@@ -29,9 +29,7 @@ public class Item {
 	 * duration Cost per unit Profit margin
 	 * 
 	 */
-	Item(double cost, double regularPrice, String brand, String 
-		description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int 
-		department) {
+	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, String sourceOfSupply, int department) {
 		this.cost = cost;
 		this.regularPrice = regularPrice;
 		this.brand = brand;
@@ -154,8 +152,8 @@ public class Item {
 	//FIXME array of objects
 	
 
-	public double profitMargin(double cost, double regularPrice) {
-		double costRatio = cost / regularPrice;
+	public double profitMargin(Item I) {
+		double costRatio = this.cost / this.regularPrice;
 		double margin = 1 - costRatio;
 		return margin;
 	}
@@ -174,8 +172,15 @@ public class Item {
 	
 	//Given retail price and unit size, find price per unit
 	
-	public double pricePerUnit(double unitSize) {
-		return regularPrice / unitSize;
+	public String pricePerUnit(double unitSize) {
+		double ppu = regularPrice / unitSize;
+		String output = ""+ppu;
+		if(liquid) {
+			output += "fl. oz.";
+		} else {
+			output += "oz.";
+		}
+		return output;
 	}
 	
 	//FIXME On sale

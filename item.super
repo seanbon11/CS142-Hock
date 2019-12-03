@@ -145,4 +145,8 @@ public class item {
 	public double salesTotalProfit(double sale, int numItems) {
 		return numItems * (regularPrice * sale);
 	}
+	
+	public double pricePerUnit(double unitSize) {
+		return regularPrice / unitSize;
+	}
 }

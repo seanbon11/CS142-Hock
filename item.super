@@ -18,7 +18,7 @@ public class item {
 //	05: Produce
 //	06: Deli
 //	07: Meat Department
-	private String[] dept = new String{Grocery, GM, Dairy, Frozen, Produce, Deli, Meat};
+	private static String[] dept = new String{Grocery, GM, Dairy, Frozen, Produce, Deli, Meat};
 	
 	
 	/*

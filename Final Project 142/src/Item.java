@@ -155,6 +155,7 @@ public class Item {
 	public double profitMargin(double cost, double regularPrice) {
 		double costRatio = cost / regularPrice;
 		double margin = 1 - costRatio;
+		System.out.println(Math.round(margin*1000)/10.0+"%");
 		return margin;
 	}
 

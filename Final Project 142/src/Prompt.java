@@ -21,6 +21,7 @@ public class Prompt {
 			//FIXME prompt for numItems and sale 
 		System.out.println("6. Price per Unit");
 			//FIXME prompt for unit size
+		System.out.println("7. Read in Batch File");
 	}
 
 }

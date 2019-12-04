@@ -7,12 +7,14 @@ public class Prompt {
 		Scanner s = new Scanner(System.in);
 		ArrayList<Item> groceryList = fillArrayList();
 		
+		
+		
 		int choice = menu(s);
 		
 		switch(choice) {
 		case 1: //Create New Item
-			Item corn = createItem();
-			groceryList.add(corn);
+			Item I = createItem(s);
+			groceryList.add(I);
 			break;
 		case 2: //View Existing Items
 			break;
@@ -63,14 +65,30 @@ public class Prompt {
 		
 	}
 	
-	public static Item createItem() {	
-		String description = "";
-		double cost = 0.0;
-		double regularPrice = 0.0;
-		double salePrice = 0.0;
-		double profitMargin = 0.0;
+	
+	public static Item createItem(Scanner s) {	
+		String inputStr = "";
+		double inputDouble = 0.0;
 		
-		Item temp = new Item(description, cost, regularPrice, salePrice, profitMargin);
+		System.out.print("Description: ");
+		inputStr = s.next();
+		String description = inputStr;
+		
+		System.out.print("Cost: ");
+		inputDouble = s.nextDouble();
+		double cost = inputDouble;
+		
+		System.out.print("Regular Price: ");
+		inputDouble = s.nextDouble();
+		double regularPrice = inputDouble;
+		
+		System.out.print("Sale Price: ");
+		inputDouble = s.nextDouble();
+		double salePrice = inputDouble;
+		
+		
+		
+		Item temp = new Item(description, cost, regularPrice, salePrice);
 		
 		return temp;
 	}
@@ -84,7 +102,7 @@ public class Prompt {
 		double salePrice = 0.0;
 		double profitMargin = 0.0;
 		
-		Item Apple = new Item(description, cost, regularPrice, salePrice, profitMargin);
+		Item Apple = new Item(description, cost, regularPrice, salePrice);
 		groceryList.add(Apple);
 		
 		description = "Rice";
@@ -93,7 +111,7 @@ public class Prompt {
 		salePrice = 0.0;
 		profitMargin = 0.0;
 		
-		Item Rice = new Item(description, cost, regularPrice, salePrice, profitMargin);
+		Item Rice = new Item(description, cost, regularPrice, salePrice);
 		groceryList.add(Rice);
 		
 		return groceryList;

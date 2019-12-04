@@ -19,7 +19,7 @@ public class Item {
 	// 06: Deli
 	// 07: Meat Department
 	
-	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
+//	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
 	
 	/*
 	 * The following fields wouldn't be bad for the sub-classes: 
@@ -87,66 +87,66 @@ public class Item {
 		System.out.println("New description: "+description);
 	}
 	
-	public int getUPC() {
-		return this.UPC;
-	}
-	
-	public void setUPC(int UPC) {
-		System.out.println("Old UPC: "+UPC);
-		this.UPC = UPC;
-		System.out.println("New UPC: "+UPC);
-	}
-	
-	public int getItemCode() {
-		return this.itemCode;
-	}
-	
-	public void setItemCode(int itemCode) {
-		System.out.println("Old item code: "+itemCode);
-		this.itemCode = itemCode;
-		System.out.println("New item code: "+itemCode);
-	}
-	
-	public boolean getTaxable() {
-		return this.taxable;
-	}
-	
-	public void setTaxable(boolean taxable) {
-		System.out.println("Was taxable: "+taxable);
-		this.taxable = taxable;
-		System.out.println("Is taxable: "+taxable);
-	}
-	
-	public boolean getLiquid() {
-		return this.liquid;
-	}
-	
-	public void setLiquid(boolean liquid) {
-		System.out.println("Was liquid: "+liquid);
-		this.liquid = liquid;
-		System.out.println("Is liquid: "+liquid);
-	}
-	
-	public String getSourceOfSupply() {
-		return this.sourceOfSupply;
-	}
-	
-	public void setSourceOfSupply() {
-		System.out.println("Old source of supply: "+sourceOfSupply);
-		this.sourceOfSupply = sourceOfSupply;
-		System.out.println("New source of supply: "+sourceOfSupply);
-	}
-	
-	public String getDepartment() {
-		return dept[this.department-1];
-	}
-	
-	public void setDepartment(int department) {
-		System.out.println("Old department: "+dept[department-1]);
-		this.department = department;
-		System.out.println("New department: "+dept[department-1]);
-	}
-	
+//	public int getUPC() {
+//		return this.UPC;
+//	}
+//	
+//	public void setUPC(int UPC) {
+//		System.out.println("Old UPC: "+UPC);
+//		this.UPC = UPC;
+//		System.out.println("New UPC: "+UPC);
+//	}
+//	
+//	public int getItemCode() {
+//		return this.itemCode;
+//	}
+//	
+//	public void setItemCode(int itemCode) {
+//		System.out.println("Old item code: "+itemCode);
+//		this.itemCode = itemCode;
+//		System.out.println("New item code: "+itemCode);
+//	}
+//	
+//	public boolean getTaxable() {
+//		return this.taxable;
+//	}
+//	
+//	public void setTaxable(boolean taxable) {
+//		System.out.println("Was taxable: "+taxable);
+//		this.taxable = taxable;
+//		System.out.println("Is taxable: "+taxable);
+//	}
+//	
+//	public boolean getLiquid() {
+//		return this.liquid;
+//	}
+//	
+//	public void setLiquid(boolean liquid) {
+//		System.out.println("Was liquid: "+liquid);
+//		this.liquid = liquid;
+//		System.out.println("Is liquid: "+liquid);
+//	}
+//	
+//	public String getSourceOfSupply() {
+//		return this.sourceOfSupply;
+//	}
+//	
+//	public void setSourceOfSupply() {
+//		System.out.println("Old source of supply: "+sourceOfSupply);
+//		this.sourceOfSupply = sourceOfSupply;
+//		System.out.println("New source of supply: "+sourceOfSupply);
+//	}
+//	
+//	public String getDepartment() {
+//		return dept[this.department-1];
+//	}
+//	
+//	public void setDepartment(int department) {
+//		System.out.println("Old department: "+dept[department-1]);
+//		this.department = department;
+//		System.out.println("New department: "+dept[department-1]);
+//	}
+//	
 	
 	
 	//FIXME add prompt to interact with user
@@ -154,35 +154,35 @@ public class Item {
 	//FIXME array of objects
 	
 
-	public double profitMargin(Item I) {
-		double costRatio = this.cost / this.regularPrice;
-		double margin = 1 - costRatio;
-		return margin;
-	}
-
-	public static void updateByMargin(Item I, double desiredMargin) {
-		double cost = I.cost;
-		double decimalMargin = desiredMargin / 100;
-		double retailPrice = cost / (1-decimalMargin);
-		I.regularPrice = retailPrice;
-	}
-	
-	public double salesTotalProfit(double sale, int numItems) {
-		return numItems * (regularPrice * sale);
-	}
-	
-	//Given retail price and unit size, find price per unit
-	
-	public String pricePerUnit(double unitSize) {
-		double ppu = regularPrice / unitSize;
-		String output = ""+ppu;
-		if(liquid) {
-			output += "fl. oz.";
-		} else {
-			output += "oz.";
-		}
-		return output;
-	}
+//	public double profitMargin(Item I) {
+//		double costRatio = this.cost / this.regularPrice;
+//		double margin = 1 - costRatio;
+//		return margin;
+//	}
+//
+//	public static void updateByMargin(Item I, double desiredMargin) {
+//		double cost = I.cost;
+//		double decimalMargin = desiredMargin / 100;
+//		double retailPrice = cost / (1-decimalMargin);
+//		I.regularPrice = retailPrice;
+//	}
+//	
+//	public double salesTotalProfit(double sale, int numItems) {
+//		return numItems * (regularPrice * sale);
+//	}
+//	
+//	//Given retail price and unit size, find price per unit
+//	
+//	public String pricePerUnit(double unitSize) {
+//		double ppu = regularPrice / unitSize;
+//		String output = ""+ppu;
+//		if(liquid) {
+//			output += "fl. oz.";
+//		} else {
+//			output += "oz.";
+//		}
+//		return output;
+//	}
 	
 	//FIXME On sale
 }

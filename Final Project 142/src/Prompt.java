@@ -17,6 +17,8 @@ public class Prompt {
 			groceryList.add(I);
 			break;
 		case 2: //View Existing Items
+			I = selectItem(groceryList, s);
+			I.printDetails();
 			break;
 		case 3: //Edit an Existing Item
 			break;
@@ -42,12 +44,13 @@ public class Prompt {
 		
 	}
 	
-	public static void editExistingItem(ArrayList<Item> groceryList, Scanner s) {
+	public static Item selectItem(ArrayList<Item> groceryList, Scanner s) {
 		int option = -1;
+		int i = 1;
 		
 		while(true) {
 			System.out.println("List of Grocery Items");
-			for(int i = 1; i <= groceryList.size(); ++i) {
+			for(i = 1; i <= groceryList.size(); ++i) {
 				System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
 			}
 			
@@ -61,7 +64,8 @@ public class Prompt {
 			}
 		}
 		
-		//print selected --option
+		return groceryList.get(--option);
+		
 		
 	}
 	

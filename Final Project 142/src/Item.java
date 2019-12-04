@@ -1,34 +1,51 @@
 
 public class Item {
 
+	private String description;
+		// my brain tells me to change this to "name" for better readability? But that's kind of irrelavent...
 	private double cost;
 	private double regularPrice;
+	
+		/* I'm thinking we should set multiple price variables in order to switch between onsalePrice and regularPrice.
+		 * We can create an onSale boolean and just have two price variables, regularPrice and currentPrice.
+		 * This way, the regular price is always saved
+		 * when user lists the details of an item, it will also calculate and print the sale percentage
+		 */
+	private double currentPrice;
+	private double salePrice;
+	private boolean onSale;
+	private String unitType 
+		// One all encompassing unit variable should eliminate the need for liquid boolean and all that confusion
+	
+	
+	// All of these variables seem unnecessary for the main purpose of presentation. 
+	// Let's get a decent running presentation before implementing these.
 	private String brand;
-	private String description;
 	private int UPC;
 	private int itemCode;
 	private boolean taxable;
 	private boolean liquid;
 	private String sourceOfSupply;
 	private int department;
-
-	// Department codes are as follows:
-	// 01: Regular Grocery
-	// 02: General Merchandise & Taxable Grocery
-	// 03: Dairy
-	// 04: Frozen
-	// 05: Produce
-	// 06: Deli
-	// 07: Meat Department
+		/* Department codes are as follows:
+		 * 01: Regular Grocery
+		 * 02: General Merchandise & Taxable Grocery
+		 * 03: Dairy
+		 * 04: Frozen
+		 * 05: Produce
+		 * 06: Deli
+		 * 07: Meat Department
+		 */
+	
 	private static String[] dept = {"Grocery", "GM", "Dairy", "Frozen", "Produce", "Deli", "Meat"};
-	/*
-	 * The following fields wouldn't be bad for the sub-classes: Size Number per
-	 * case
-	 
-	 * These might go in their own methods somewhere: Discount price Discount
-	 * duration Cost per unit Profit margin
-	 
-	 */
+		/*
+		 * The following fields wouldn't be bad for the sub-classes: Size Number per
+		 * case
+
+		 * These might go in their own methods somewhere: Discount price Discount
+		 * duration Cost per unit Profit margin
+
+		 */
 	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
 		this.cost = cost;
 		this.regularPrice = regularPrice;
@@ -39,11 +56,9 @@ public class Item {
 		this.taxable = taxable;
 		this.sourceOfSupply = sourceOfSupply;
 		this.department = department;
-		}
+	}
 	
 	Item() {}
-	
-	//FIXME regular and weighed
 	
 	public double getCost() {
 		return this.cost;

@@ -2,32 +2,23 @@
 public class Item {
 
 	private String description;
-		// my brain tells me to change this to "name" for better readability? But that's kind of irrelavent...
 	private double cost;
 	private double regularPrice;
-	
-		/* I'm thinking we should set multiple price variables in order to switch between onsalePrice and regularPrice.
-		 * We can create an onSale boolean and just have two price variables, regularPrice and currentPrice.
-		 * This way, the regular price is always saved
-		 * when user lists the details of an item, it will also calculate and print the sale percentage
-		 */
-	private double currentPrice;
 	private double salePrice;
-	private boolean onSale;
-		// One all encompassing unit variable should eliminate the need for liquid boolean and all that confusion
-	private String unitType;
+	private double profitMargin;
+	
 
-	
-	
-	// All of these variables seem unnecessary for the main purpose of presentation. 
-	// Let's get a decent running presentation before implementing these.
-	private String brand;
-	private int UPC;
-	private int itemCode;
-	private boolean taxable;
-	private boolean liquid;
-	private String sourceOfSupply;
-	private int department;
+		// All of these variables seem unnecessary for the main purpose of presentation. 
+		// Let's get a decent running presentation before implementing these.
+// 	private String unitType;
+// 	private String brand;
+// 	private int UPC;
+// 	private int itemCode;
+// 	private boolean taxable;
+// 	private boolean onSale;
+// 	private boolean liquid;
+// 	private String sourceOfSupply;
+// 	private int department;
 		/* Department codes are as follows:
 		 * 01: Regular Grocery
 		 * 02: General Merchandise & Taxable Grocery
@@ -47,16 +38,12 @@ public class Item {
 		 * duration Cost per unit Profit margin
 
 		 */
-	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
+	Item(String description, double cost, double regularPrice, double salePrice, double profitMargin) {
+		this.description = description;
 		this.cost = cost;
 		this.regularPrice = regularPrice;
-		this.brand = brand;
-		this.description = description;
-		this.UPC = UPC;
-		this.itemCode = itemCode;
-		this.taxable = taxable;
-		this.sourceOfSupply = sourceOfSupply;
-		this.department = department;
+		this.salePrice = salePrice;
+		this.profitMargin = profitMargin;
 	}
 	
 	Item() {}

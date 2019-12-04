@@ -41,7 +41,7 @@ public class Item {
 		this.department = department;
 		}
 	
-	Item() {}
+	Item() {} //initialiaze all to 0
 	
 	//FIXME regular and weighed
 	

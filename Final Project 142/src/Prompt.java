@@ -64,19 +64,13 @@ public class Prompt {
 	}
 	
 	public static Item createItem() {	
-		double cost = 0;
-		double regularPrice = 0;
-		String brand = "";
 		String description = "";
-		int UPC = 0;
-		int itemCode = 0;
-		boolean taxable = true;
-		boolean liquid = true;
-		String sourceOfSupply = "";
-		int department = 0;
+		double cost = 0.0;
+		double regularPrice = 0.0;
+		double salePrice = 0.0;
+		double profitMargin = 0.0;
 		
-		Item temp = new Item(cost, regularPrice, brand, description, UPC, itemCode, taxable, 
-				liquid, sourceOfSupply, department);
+		Item temp = new Item(description, cost, regularPrice, salePrice, profitMargin);
 		
 		return temp;
 	}
@@ -84,34 +78,22 @@ public class Prompt {
 	public static ArrayList<Item> fillArrayList() {
 		ArrayList<Item> groceryList = new ArrayList<Item>();
 		
-		double cost = 1.0;
-		double regularPrice = 1.0;
-		String brand = "";
 		String description = "Apple";
-		int UPC = 1;
-		int itemCode = 1;
-		boolean taxable = true;
-		boolean liquid = true;
-		String sourceOfSupply = "";
-		int department = 1;
+		double cost = 0.0;
+		double regularPrice = 0.0;
+		double salePrice = 0.0;
+		double profitMargin = 0.0;
 		
-		Item Apple = new Item(cost, regularPrice, brand, description, UPC, itemCode, taxable, 
-				liquid, sourceOfSupply, department);
+		Item Apple = new Item(description, cost, regularPrice, salePrice, profitMargin);
 		groceryList.add(Apple);
 		
-		cost = 2.0;
-		regularPrice = 2.0;
-		brand = "";
 		description = "Rice";
-		UPC = 2;
-		itemCode = 2;
-		taxable = false;
-		liquid = true;
-		sourceOfSupply = "";
-		department = 2;
+		cost = 0.0;
+		regularPrice = 0.0;
+		salePrice = 0.0;
+		profitMargin = 0.0;
 		
-		Item Rice = new Item(cost, regularPrice, brand, description, UPC, itemCode, taxable, 
-				liquid, sourceOfSupply, department);
+		Item Rice = new Item(description, cost, regularPrice, salePrice, profitMargin);
 		groceryList.add(Rice);
 		
 		return groceryList;

@@ -183,9 +183,12 @@ public class Item {
 		return regularPrice / unitSize;
 	}
 	
-	public static void printDetails(Item I) {
-		System.out.println("Name"+I.description);
-		
+	public void printDetails() {
+		System.out.println("Name: "+getDescription());
+		System.out.println("Cost: "+getCost());
+		System.out.println("Regular Price: "+getRegularPrice());
+		System.out.println("Sale Price: "+getSalePrice());
+		System.out.println("Profit Margin: "+getProfitMargin()+"%");
 	}
 	//FIXME On sale
 }

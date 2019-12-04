@@ -5,7 +5,7 @@ public class Item {
 
 	private String description;
 	private double purchasePrice;
-	private String purchaseUnit;
+	private double purchaseUnit;
 	private double salePrice;
 	private String saleUnit;
 
@@ -34,11 +34,11 @@ public class Item {
 	 * 
 	 */
 	
-	Item(String description, double purchasePrice, String purchaseUnit, double salePrice, String saleUnit) {
+	Item(String description, double purchasePrice, double purchaseUnit, double salePrice, String saleUnit) {
 		this.description = description;
 		this.purchasePrice = purchasePrice;
 		this.purchaseUnit = purchaseUnit;
-		this.description = description;
+		
 		this.salePrice = salePrice;
 		this.saleUnit = saleUnit;
 		}

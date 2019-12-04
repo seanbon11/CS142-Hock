@@ -177,6 +177,10 @@ public class Item {
 		return regularPrice / unitSize;
 	}
 	
+	public static void printDetails(Item I) {
+		System.out.println("Name"+I.description);
+		
+	}
 	//FIXME On sale
 }
 		

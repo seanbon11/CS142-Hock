@@ -8,29 +8,35 @@ public class Prompt {
 		ArrayList<Item> groceryList = fillArrayList();
 		
 		
+		while(true) {
+			int choice = menu(s);
+			
+			switch(choice) {
+			case 1: //Create New Item
+				Item I = createItem(s);
+				groceryList.add(I);
+				break;
+			case 2: //View Existing Items
+				I = selectItem(groceryList, s);
+				I.printDetails();
+				break;
+			case 3: //Edit an Existing Item
+				I = selectItem(groceryList, s);
+				editExistingItem(I, s);
+				break;
+			case 4: //
+				break;
+			case 5: //Delete Item
+				break;
+			case 6: //Quit
+				return;
+			default:
+				System.out.println("/n/nINVALID, try again.");
+				break;
+			
+			}
 		
-		int choice = menu(s);
 		
-		switch(choice) {
-		case 1: //Create New Item
-			Item I = createItem(s);
-			groceryList.add(I);
-			break;
-		case 2: //View Existing Items
-			I = selectItem(groceryList, s);
-			I.printDetails();
-			break;
-		case 3: //Edit an Existing Item
-			break;
-		case 4: //View Item Properties
-			break;
-		case 5: //Delete Item
-			break;
-		case 6: //Quit
-			return;
-		default:
-			System.out.println("/n/nINVALID, try again.");
-			break;
 		}
 		//add delete item
 		
@@ -41,6 +47,14 @@ public class Prompt {
 		//purchase units
 		//sale units
 		//case versus 1
+		
+	}
+	
+	public static void editExistingItem(Item I, Scanner s) {
+		String input;
+		I.printDetails();
+		System.out.println();
+		input = s.next();
 		
 	}
 	
@@ -56,10 +70,12 @@ public class Prompt {
 			
 			option = s.nextInt();
 			
-			if(option < 1 || option > groceryList.size()) {
+			if(option < 0 || option > groceryList.size()) {
 				System.out.println("INVALID");
 				continue;
-			} else {
+			} 
+			
+			if(option == 0) {
 				break;
 			}
 		}
@@ -117,27 +133,6 @@ public class Prompt {
 		
 		Item Rice = new Item(description, cost, regularPrice, salePrice);
 		groceryList.add(Rice);
-		
-		Item ToiletPaper = new Item("Toilet Paper", 0.55, 0.85, 0.85);
-		groceryList.add(ToiletPaper);
-		
-		Item Cashews = new Item("Cashews", 1.68, 2.95, 2.95);
-		groceryList.add(Cashews);
-		
-		Item Tulip = new Item("Tulip", 0.10, 0.25, 0.25);
-		groceryList.add(Tulip);
-		
-		Item Steak = new Item("Steak", 10.55, 15.45, 15.45);
-		groceryList.add(Steak);
-		
-		Item LightBulbs = new Item("Light Bulbs", 3.65, 6.05, 6.05);
-		groceryList.add(LightBulbs);
-		
-		Item SaladDressing = new Item("Salad Dressing", 4.56, 7.81, 7.81);
-		groceryList.add(SaladDressing);
-		
-		Item Floss = new Item("Floss", 0.35, 0.65, 0.65);
-		groceryList.add(Floss);
 		
 		return groceryList;
 			

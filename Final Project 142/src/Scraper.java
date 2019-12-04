@@ -7,7 +7,6 @@ public class Scraper {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner s = new Scanner(new File( "brdatatest.xml" ));
-
 		ArrayList<String> list = new ArrayList<>();
 		while (s.hasNextLine()) {
 			String line = s.nextLine();
@@ -18,7 +17,6 @@ public class Scraper {
 		}
 		System.out.println(list);
 		System.out.println(list.size());
-		
 	}
 
 }

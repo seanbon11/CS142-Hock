@@ -38,12 +38,12 @@ public class Item {
 		 * duration Cost per unit Profit margin
 
 		 */
-	Item(String description, double cost, double regularPrice, double salePrice, double profitMargin) {
+	Item(String description, double cost, double regularPrice, double salePrice) {
 		this.description = description;
 		this.cost = cost;
 		this.regularPrice = regularPrice;
 		this.salePrice = salePrice;
-		this.profitMargin = profitMargin;
+		this.profitMargin = (Math.round(((salePrice-cost)/salePrice)*1000)/10);
 	}
 	
 	Item() {} //initialiaze all to 0
@@ -53,9 +53,9 @@ public class Item {
 	}
 	
 	public void setCost(double cost) {
-		System.out.println("Old cost: "+cost);
+		System.out.println("Old cost: "+this.cost);
 		this.cost = cost;
-		System.out.println("New cost: "+cost);
+		System.out.println("New cost: "+this.cost);
 	}
 	
 	public double getRegularPrice() {
@@ -63,19 +63,9 @@ public class Item {
 	}
 	
 	public void setRegularPrice(double regularPrice) {
-		System.out.println("Old retail price: "+regularPrice);
+		System.out.println("Old retail price: "+this.regularPrice);
 		this.regularPrice = regularPrice;
-		System.out.println("New retail price: "+regularPrice);
-	}
-	
-	public String getBrand() {
-		return this.brand;
-	}
-	
-	public void setBrand(String brand) {
-		System.out.println("Old brand: "+brand);
-		this.brand = brand;
-		System.out.println("New brand: "+brand);
+		System.out.println("New retail price: "+this.regularPrice);
 	}
 	
 	public String getDescription() {
@@ -83,71 +73,84 @@ public class Item {
 	}
 	
 	public void setDescription(String description) {
-		System.out.println("Old description: "+description);
+		System.out.println("Old description: "+this.description);
 		this.description = description;
-		System.out.println("New description: "+description);
+		System.out.println("New description: "+this.description);
 	}
 	
-	public int getUPC() {
-		return this.UPC;
+	public double getSalePrice() {
+		return this.salePrice;
 	}
 	
-	public void setUPC(int UPC) {
-		System.out.println("Old UPC: "+UPC);
-		this.UPC = UPC;
-		System.out.println("New UPC: "+UPC);
+	public void setSalePrice(double salePrice) {
+		System.out.println("Old sale price: "+this.salePrice);
+		this.salePrice = salePrice;
+		System.out.println("New sale price: "+this.salePrice);
 	}
 	
-	public int getItemCode() {
-		return this.itemCode;
+	public double getProfitMargin() {
+		return this.profitMargin;
 	}
 	
-	public void setItemCode(int itemCode) {
-		System.out.println("Old item code: "+itemCode);
-		this.itemCode = itemCode;
-		System.out.println("New item code: "+itemCode);
-	}
-	
-	public boolean getTaxable() {
-		return this.taxable;
-	}
-	
-	public void setTaxable(boolean taxable) {
-		System.out.println("Was taxable: "+taxable);
-		this.taxable = taxable;
-		System.out.println("Is taxable: "+taxable);
-	}
-	
-	public boolean getLiquid() {
-		return this.liquid;
-	}
-	
-	public void setLiquid(boolean liquid) {
-		System.out.println("Was liquid: "+liquid);
-		this.liquid = liquid;
-		System.out.println("Is liquid: "+liquid);
-	}
-	
-	public String getSourceOfSupply() {
-		return this.sourceOfSupply;
-	}
-	
-	public void setSourceOfSupply() {
-		System.out.println("Old source of supply: "+sourceOfSupply);
-		this.sourceOfSupply = sourceOfSupply;
-		System.out.println("New source of supply: "+sourceOfSupply);
-	}
-	
-	public String getDepartment() {
-		return dept[this.department-1];
-	}
-	
-	public void setDepartment(int department) {
-		System.out.println("Old department: "+dept[department-1]);
-		this.department = department;
-		System.out.println("New department: "+dept[department-1]);
-	}
-	
+//	public String getBrand() {
+//		return this.brand;
+//	}
+//	
+//	public void setBrand(String brand) {
+//		System.out.println("Old brand: "+brand);
+//		this.brand = brand;
+//		System.out.println("New brand: "+brand);
+//	public int getUPC() {
+//		return this.UPC;
+//	}
+//	
+//	public void setUPC(int UPC) {
+//		System.out.println("Old UPC: "+UPC);
+//		this.UPC = UPC;
+//		System.out.println("New UPC: "+UPC);
+//	}
+//	
+//	public int getItemCode() {
+//		return this.itemCode;
+//	}
+//	
+//	public void setItemCode(int itemCode) {
+//		System.out.println("Old item code: "+itemCode);
+//		this.itemCode = itemCode;
+//		System.out.println("New item code: "+itemCode);
+//	}
+//	
+//	public boolean getTaxable() {
+//		return this.taxable;
+//	}
+//	
+//	public void setTaxable(boolean taxable) {
+//		System.out.println("Was taxable: "+taxable);
+//		this.taxable = taxable;
+//		System.out.println("Is taxable: "+taxable);
+//	}
+//	
+//	
+//	public String getSourceOfSupply() {
+//		return this.sourceOfSupply;
+//	}
+//	
+//	public void setSourceOfSupply() {
+//		System.out.println("Old source of supply: "+sourceOfSupply);
+//		this.sourceOfSupply = sourceOfSupply;
+//		System.out.println("New source of supply: "+sourceOfSupply);
+//	}
+//	
+//	public String getDepartment() {
+//		return dept[this.department-1];
+//	}
+//	
+//	public void setDepartment(int department) {
+//		System.out.println("Old department: "+dept[department-1]);
+//		this.department = department;
+//		System.out.println("New department: "+dept[department-1]);
+//	}
+//	
 	
 	
 	//FIXME add prompt to interact with user

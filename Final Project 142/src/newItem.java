@@ -34,17 +34,13 @@ public class Item {
 	 * 
 	 */
 	
-	Item(double cost, double regularPrice, String brand, String description, int UPC, int itemCode, boolean taxable, boolean liquid, String sourceOfSupply, int department) {
-		this.cost = cost;
-		this.regularPrice = regularPrice;
-		this.brand = brand;
+	Item(String description, double purchasePrice, String purchaseUnit, double salePrice, String saleUnit) {
 		this.description = description;
-		this.UPC = UPC;
-		this.itemCode = itemCode;
-		this.taxable = taxable;
-		this.liquid = liquid;
-		this.sourceOfSupply = sourceOfSupply;
-		this.department = department;
+		this.purchasePrice = purchasePrice;
+		this.purchaseUnit = purchaseUnit;
+		this.description = description;
+		this.salePrice = salePrice;
+		this.saleUnit = saleUnit;
 		}
 	
 	Item() {}

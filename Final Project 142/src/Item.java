@@ -14,8 +14,9 @@ public class Item {
 	private double currentPrice;
 	private double salePrice;
 	private boolean onSale;
-	private String unitType 
 		// One all encompassing unit variable should eliminate the need for liquid boolean and all that confusion
+	private String unitType;
+
 	
 	
 	// All of these variables seem unnecessary for the main purpose of presentation. 

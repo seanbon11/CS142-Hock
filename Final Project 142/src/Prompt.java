@@ -14,16 +14,21 @@ public class Prompt {
 			Item corn = createItem();
 			groceryList.add(corn);
 			break;
-		case 2: //Edit an Existing Item
+		case 2: //View Existing Items
 			break;
-		case 3:
+		case 3: //Edit an Existing Item
 			break;
-		case 4:
+		case 4: //View Item Properties
+			break;
+		case 5: //Delete Item
+			break;
+		case 6: //Quit
 			return;
 		default:
+			System.out.println("/n/nINVALID, try again.");
 			break;
 		}
-		
+		//add delete item
 		
 		
 		
@@ -53,6 +58,8 @@ public class Prompt {
 				break;
 			}
 		}
+		
+		//print selected --option
 		
 	}
 	
@@ -123,11 +130,13 @@ public class Prompt {
 			System.out.println("1. Create New Item"); 
 			System.out.println("2. View Existing Items");
 			System.out.println("3. Edit an Existing Item");
-			System.out.println("4. Quit");
+			System.out.println("4. View Properties");
+			System.out.println("5. Delete Item");
+			System.out.println("6. Quit");
 			
 			choice = s.nextInt();
 			
-			if(choice > 4 || choice < 1) {
+			if(choice > 6 || choice < 1) {
 				System.out.println("/n/nINVALID, try again.");
 			} else {
 				break;

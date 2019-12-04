@@ -48,34 +48,34 @@ public class Item {
 	//FIXME regular and weighed
 	
 	public double getCost() {
-		return this.cost;
+		return this.purchasePrice;
 	}
 	
 	public void setCost(double cost) {
-		System.out.println("Old cost: "+cost);
-		this.cost = cost;
-		System.out.println("New cost: "+cost);
+		System.out.println("Old cost: "+purchasePrice);
+		this.purchasePrice = cost;
+		System.out.println("New cost: "+purchasePrice);
 	}
 	
-	public double getRegularPrice() {
-		return this.regularPrice;
+	public double getSalePrice() {
+		return this.salePrice;
 	}
 	
-	public void setRegularPrice(double regularPrice) {
-		System.out.println("Old retail price: "+regularPrice);
-		this.regularPrice = regularPrice;
-		System.out.println("New retail price: "+regularPrice);
+	public void setRegularPrice(double salePrice) {
+		System.out.println("Old retail price: "+salePrice);
+		this.salePrice = salePrice;
+		System.out.println("New retail price: "+salePrice);
 	}
 	
-	public String getBrand() {
-		return this.brand;
-	}
+//	public String getBrand() {
+//		return this.brand;
+//	}
 	
-	public void setBrand(String brand) {
-		System.out.println("Old brand: "+brand);
-		this.brand = brand;
-		System.out.println("New brand: "+brand);
-	}
+//	public void setBrand(String brand) {
+//		System.out.println("Old brand: "+brand);
+//		this.brand = brand;
+//		System.out.println("New brand: "+brand);
+//	}
 	
 	public String getDescription() {
 		return this.description;

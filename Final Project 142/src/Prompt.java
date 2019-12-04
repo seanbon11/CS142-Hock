@@ -10,23 +10,15 @@ public class Prompt {
 		int choice = menu(s);
 		
 		switch(choice) {
-		case 1: //Create Item
+		case 1: //Create New Item
 			Item corn = createItem();
 			groceryList.add(corn);
 			break;
-		case 2:
+		case 2: //Edit an Existing Item
 			break;
 		case 3:
 			break;
 		case 4:
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		case 7:
-			break;
-		case 8:
 			return;
 		default:
 			break;
@@ -40,6 +32,27 @@ public class Prompt {
 		//purchase units
 		//sale units
 		//case versus 1
+		
+	}
+	
+	public static void editExistingItem(ArrayList<Item> groceryList, Scanner s) {
+		int option = -1;
+		
+		while(true) {
+			System.out.println("List of Grocery Items");
+			for(int i = 1; i <= groceryList.size(); ++i) {
+				System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
+			}
+			
+			option = s.nextInt();
+			
+			if(option < 1 || option > groceryList.size()) {
+				System.out.println("INVALID");
+				continue;
+			} else {
+				break;
+			}
+		}
 		
 	}
 	
@@ -102,49 +115,19 @@ public class Prompt {
 		int choice = 0;
 		
 		while(true) {
-			//description/name, 
-			
 			System.out.println("Welcome to Grocery Pricing Management!");
 			System.out.println("What would you like to do?");
 			
 			System.out.println();
 			
-			System.out.println("1. Create New Item"); //FIXME put in item array
-			//add into database else input from database
-			//DO you want to create new item or use previous item, check using name
-			//edit existing item
-			
-			//remove object from
-			
-			//ArrayList of objects, Item
-			//Clear ArrayList
-			
-			
-			//edit existing
-			
-			//populate a few items into 
-			
-			//force enter each value
-			
-			//print item name plus index, have choose to delete
-			
-			System.out.println("2. Edit an Existing Item");
-				//FIXME check for item existence
-				//FIXME jump to other menu with list of things to update
-			System.out.println("3. Print Item"); //item name, description
-			System.out.println("3. Calculate Profit Margin");
-			System.out.println("4. Update by Margin");
-				//FIXME prompt for new margin
-			System.out.println("5. Total Profit with Items on Sale");
-				//FIXME prompt for numItems and sale 
-			System.out.println("6. Price per Unit");
-				//FIXME prompt for unit size
-			System.out.println("7. Read in Batch File");
-			System.out.println("8. Quit");
+			System.out.println("1. Create New Item"); 
+			System.out.println("2. View Existing Items");
+			System.out.println("3. Edit an Existing Item");
+			System.out.println("4. Quit");
 			
 			choice = s.nextInt();
 			
-			if(choice > 8 || choice < 1) {
+			if(choice > 4 || choice < 1) {
 				System.out.println("/n/nINVALID, try again.");
 			} else {
 				break;

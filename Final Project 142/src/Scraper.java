@@ -52,7 +52,7 @@ public class Scraper {
 	
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		File items = new File("sampleitems.xml");
+/*		File items = new File("sampleitems.xml");
 		Scanner t = new Scanner(items);
 		ArrayList<Item> itemList = new ArrayList<>();
 		while(t.hasNextLine()) {
@@ -60,7 +60,6 @@ public class Scraper {
 			if (item == null) break; // done with file
 			itemList.add(item);
 		}
-		System.out.println(itemList);
+		System.out.println(itemList); */
 	}
-
 }

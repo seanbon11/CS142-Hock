@@ -66,17 +66,17 @@ public class Prompt {
 		}
 		
 		if(input == "cost" || input == "Cost") {
-			I.setCost(Integer.parseInt(newValue));
+			I.setCost(Double.parseDouble(newValue));
 		}
 		
 		if(input == "regular price" || input == "Regular price" || 
 				input == "regular Price" || input == "Regular Price") {
-			I.setRegularPrice(Integer.parseInt(newValue));
+			I.setRegularPrice(Double.parseDouble(newValue));
 		}
 		
-		if(input == "sale price" || input == "sale price" || 
-				input == "sale price" || input == "sale price") {
-			I.setSalePrice(Integer.parseInt(newValue));
+		if(input == "sale price" || input == "Sale price" || 
+				input == "sale Price" || input == "Sale Price") {
+			I.setSalePrice(Double.parseDouble(newValue));
 		}
 
 		//FIXME if not numbers, will cause problems, how to fix?

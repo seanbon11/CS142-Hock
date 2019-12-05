@@ -10,7 +10,6 @@ public class Prompt {
 		String newValue = "";
 		
 		System.out.println("Welcome to Grocery Pricing Management!");
-		System.out.println();
 		
 		while (true) {
 			int choice = menu(s);
@@ -133,17 +132,12 @@ public class Prompt {
 		inputDouble = s.nextDouble();
 		double cost = inputDouble;
 
-		System.out.print("Regular Price: ");
+		System.out.print("Price: ");
 		inputDouble = s.nextDouble();
-		double regularPrice = inputDouble;
+		double price = inputDouble;
 
-		System.out.print("Sale Price: ");
-		inputDouble = s.nextDouble();
-		double salePrice = inputDouble;
-
-		Item temp = new Item(description, cost, regularPrice, salePrice);
+		Item temp = new Item(description, cost, price, price);
 		System.out.println(description+" successfuly added to list!");
-		System.out.println();
 		return temp;
 	}
 
@@ -185,6 +179,7 @@ public class Prompt {
 		int choice = 0;
 		
 		while (true) {
+			System.out.println();
 			System.out.println("What would you like to do?");
 			System.out.println();
 			

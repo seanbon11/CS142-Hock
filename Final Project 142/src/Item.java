@@ -190,6 +190,10 @@ public class Item {
 		System.out.println("Sale Price: "+getSalePrice());
 		System.out.println("Profit Margin: "+getProfitMargin()+"%");
 	}
+	
+	public String toString() {
+		return getDescription() + " "+ getCost()+" "+getRegularPrice()+" "+getSalePrice();
+	}
 	//FIXME On sale
 }
 		

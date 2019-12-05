@@ -1,11 +1,27 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Prompt {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
+		// Load an item file
+		ArrayList<Item> groceryList = new ArrayList<>();
+		Scanner itemFile = new Scanner(new File("items.txt"));
+		itemFile.useDelimiter("[~\n\r]+");
+		while (itemFile.hasNext()) {
+			groceryList.add(new Item(itemFile.next(), itemFile.nextDouble(), itemFile.nextDouble(), itemFile.nextDouble()));
+			itemFile.nextLine(); // Throw away rest of line (ensure a certain level of sanity: one item per line)
+		}
+		//System.out.println(groceryList);
+		itemFile.close();
+		if (groceryList.size() == 0) {
+			System.out.println("Fill array list...");
+			groceryList = fillArrayList(); // Start with default items
+		}
 		Scanner s = new Scanner(System.in);
-		ArrayList<Item> groceryList = fillArrayList();
 
 		String newValue = "";
 		Item I;
@@ -39,6 +55,12 @@ public class Prompt {
 				groceryList = deleteItem(groceryList, s);
 				break;
 			case 5: // Quit
+				// Write the file
+				PrintWriter fileWriter = new PrintWriter(new File("items.txt"));
+				for (Item item : groceryList) {
+					fileWriter.println(item.getDescription() + "~"+ item.getCost()+ "~"+ item.getRegularPrice() + "~"+ item.getSalePrice());
+				}
+				fileWriter.close();
 				System.out.println("Goodbye");
 				return;
 			default:
@@ -48,7 +70,6 @@ public class Prompt {
 			}
 
 		}
-
 	}
 	
 	public static ArrayList<Item> deleteItem(ArrayList<Item> groceryList, Scanner s) {

@@ -6,6 +6,8 @@ public class Prompt {
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		ArrayList<Item> groceryList = fillArrayList();
+		
+		String newValue = "";
 
 		int choice = menu(s);
 
@@ -20,7 +22,8 @@ public class Prompt {
 			break;
 		case 3: // Edit an Existing Item
 			I = selectItem(groceryList, s);
-			editExistingItem(I, s);
+			newValue = selectNewValue(s);
+			editExistingItem(I, s, newValue);
 			break;
 		case 4: //
 			break;
@@ -42,13 +45,42 @@ public class Prompt {
 		// case versus 1
 
 	}
+	
+	public static String selectNewValue(Scanner s) {
+		String newInput;
+		System.out.print("What new value would you like to replace X with? ");
+		newInput = s.nextLine();
+		return newInput;
+	}
 
-	public static void editExistingItem(Item I, Scanner s) {
+	public static void editExistingItem(Item I, Scanner s, String newValue) {
 		String input;
+		
+		//add in sequential numbers to print
 		I.printDetails();
 		System.out.println();
-		input = s.next();
+		input = s.nextLine();
+		
+		if(input == "name" || input == "Name") {
+			I.setDescription(newValue);
+		}
+		
+		if(input == "cost" || input == "Cost") {
+			I.setCost(Integer.parseInt(newValue));
+		}
+		
+		if(input == "regular price" || input == "Regular price" || 
+				input == "regular Price" || input == "Regular Price") {
+			I.setRegularPrice(Integer.parseInt(newValue));
+		}
+		
+		if(input == "sale price" || input == "sale price" || 
+				input == "sale price" || input == "sale price") {
+			I.setSalePrice(Integer.parseInt(newValue));
+		}
 
+		//FIXME if not numbers, will cause problems, how to fix?
+		
 	}
 
 	public static Item selectItem(ArrayList<Item> groceryList, Scanner s) {
@@ -165,7 +197,7 @@ public class Prompt {
 
 			choice = s.nextInt();
 
-			if (choice > 6 || choice < 1) {
+			if (choice > 5 || choice < 1) {
 				System.out.println("/n/nINVALID, try again.");
 			} else {
 				break;

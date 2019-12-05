@@ -8,7 +8,6 @@ public class Prompt {
 		ArrayList<Item> groceryList = fillArrayList();
 		
 		
-		while(true) {
 			int choice = menu(s);
 			
 			switch(choice) {
@@ -36,7 +35,6 @@ public class Prompt {
 			
 			}
 		
-		}
 		//add delete item
 		
 		//prompt for units

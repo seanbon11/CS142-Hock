@@ -19,9 +19,7 @@ public class Scraper {
 	}
 	
 	
-	public static void loadNewItems(Scanner s) {
-		
-		while (s.hasNextLine()) {
+	public static Item loadNewItems(Scanner s) {
 			String line = s.nextLine();
 			String desc = "desc";
 			double cst = 0.0;
@@ -29,40 +27,32 @@ public class Scraper {
 			double tpr = 0.0;
 			if (line.startsWith("	<Description>")) {
 				desc = line.substring(line.indexOf(">")+1, line.indexOf("</"));
-				continue;
+				line = s.nextLine();
 			}
 			if (line.startsWith("	<Cost>")) {
 				cst = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
-				continue;
+				line = s.nextLine();
 			}
 			if (line.startsWith("	<RegularPrice>")) {
 				retail = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
-				continue;
+				line = s.nextLine();
 			}
 			if (line.startsWith("	<SalePrice>")) {
 				tpr = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
-				continue;
+				line = s.nextLine();
 			}
 			
-//			Item ""+desc"" = new Item(desc, cst, retail, tpr);
-			
+			Item temp = new Item(desc, cst, retail, tpr);
+			return temp;
 		}
 		
-	}
 	
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner s = new Scanner(new File( "brdatatest.xml" ));
-		ArrayList<String> list = new ArrayList<>();
-		while (s.hasNextLine()) {
-			String line = s.nextLine();
-			if (line.startsWith("    <Wh_Item>")) {
-				String number = line.substring(line.indexOf(">")+1, line.indexOf("</"));
-				list.add(number);
-			}
+		Scanner t = new Scanner(new File( "sampleitems.xml" ));
+		while(t.hasNextLine()); { 
+			loadNewItems(t);
 		}
-		System.out.println(list);
-		System.out.println(list.size());
 	}
 
 }

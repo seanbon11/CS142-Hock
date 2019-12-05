@@ -57,6 +57,8 @@ public class Prompt {
 		String input;
 		
 		//add in sequential numbers to print
+		
+		System.out.println();
 		I.printDetails();
 		System.out.println();
 		input = s.nextLine();
@@ -79,6 +81,7 @@ public class Prompt {
 			I.setSalePrice(Double.parseDouble(newValue));
 		}
 
+		I.printDetails();
 		//FIXME if not numbers, will cause problems, how to fix?
 		
 	}
@@ -99,13 +102,12 @@ public class Prompt {
 				System.out.println("INVALID");
 				continue;
 			}
-
-			if (option == 0) {
-				break;
-			}
+			
+			return groceryList.get(--option);
+			
 		}
 
-		return groceryList.get(--option);
+		
 
 	}
 

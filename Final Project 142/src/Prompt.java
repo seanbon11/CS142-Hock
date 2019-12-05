@@ -26,8 +26,6 @@ public class Prompt {
 		String newValue = "";
 		Item I;
 		
-		System.out.println("Welcome to Grocery Pricing Management!");
-		
 		while (true) {
 			int choice = menu(s);
 			
@@ -234,6 +232,12 @@ public class Prompt {
 		int choice = 0;
 		
 		while (true) {
+			
+/*			for(int i = 0; i < 100; i++) {
+				System.out.println();
+			}*/
+			System.out.println("Welcome to Grocery Pricing Management!");
+			
 			System.out.println("\nWhat would you like to do?\n");
 			
 			System.out.println("1. Create New Item");

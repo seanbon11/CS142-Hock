@@ -36,11 +36,8 @@ public class Prompt {
 			
 			}
 		
-		
 		}
 		//add delete item
-		
-		
 		
 		//prompt for units
 		//array of unit variables
@@ -82,9 +79,7 @@ public class Prompt {
 		
 		return groceryList.get(--option);
 		
-		
 	}
-	
 	
 	public static Item createItem(Scanner s) {	
 		String inputStr = "";
@@ -105,8 +100,6 @@ public class Prompt {
 		System.out.print("Sale Price: ");
 		inputDouble = s.nextDouble();
 		double salePrice = inputDouble;
-		
-		
 		
 		Item temp = new Item(description, cost, regularPrice, salePrice);
 		

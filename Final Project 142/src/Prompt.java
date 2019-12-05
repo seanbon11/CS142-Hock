@@ -14,18 +14,22 @@ public class Prompt {
 
 			switch (choice) {
 			case 1: // Create New Item
+				s.nextLine();
 				Item I = createItem(s);
 				groceryList.add(I);
 				break;
 			case 2: // View Existing Items
+				s.nextLine();
 				I = selectItem(groceryList, s);
 				I.printDetails();
 				break;
 			case 3: // Edit an Existing Item
+				s.nextLine();
 				I = selectItem(groceryList, s);
 				editExistingItem(I, s);
 				break;
 			case 4: // Delete Item
+				s.nextLine();
 				groceryList = deleteItem(groceryList, s);
 				break;
 			case 5: // Quit
@@ -120,7 +124,7 @@ public class Prompt {
 		double inputDouble = 0.0;
 
 		System.out.print("Description: ");
-		inputStr = s.next();
+		inputStr = s.nextLine();
 		String description = inputStr;
 
 		System.out.print("Cost: ");

@@ -8,7 +8,10 @@ public class Prompt {
 		ArrayList<Item> groceryList = fillArrayList();
 
 		String newValue = "";
-
+		
+		System.out.println("Welcome to Grocery Pricing Management!");
+		System.out.println();
+		
 		while (true) {
 			int choice = menu(s);
 
@@ -65,10 +68,9 @@ public class Prompt {
 		String input;
 		String newValue;
 
-		System.out.println();
 		I.printDetails();
 		System.out.print("\nEnter Property Name To Change: ");
-		input = s.nextLine();
+		s.nextLine();
 		input = s.nextLine();
 
 		System.out.print("\nReplace It With: ");
@@ -140,7 +142,8 @@ public class Prompt {
 		double salePrice = inputDouble;
 
 		Item temp = new Item(description, cost, regularPrice, salePrice);
-
+		System.out.println(description+" successfuly added to list!");
+		System.out.println();
 		return temp;
 	}
 
@@ -180,13 +183,11 @@ public class Prompt {
 
 	public static int menu(Scanner s) {
 		int choice = 0;
-
+		
 		while (true) {
-			System.out.println("Welcome to Grocery Pricing Management!");
 			System.out.println("What would you like to do?");
-
 			System.out.println();
-
+			
 			System.out.println("1. Create New Item");
 			System.out.println("2. View Existing Items");
 			System.out.println("3. Edit an Existing Item");

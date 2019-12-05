@@ -36,13 +36,6 @@ public class Prompt {
 			break;
 
 		}
-		// add delete item
-
-		// prompt for units
-		// array of unit variables
-		// purchase units
-		// sale units
-		// case versus 1
 
 	}
 	
@@ -51,6 +44,7 @@ public class Prompt {
 		System.out.print("What new value would you like to replace X with? ");
 		newInput = s.nextLine();
 		return newInput;
+		//FIXME not allowing input
 	}
 
 	public static void editExistingItem(Item I, Scanner s, String newValue) {

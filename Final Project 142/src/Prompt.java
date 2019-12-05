@@ -8,7 +8,7 @@ public class Prompt {
 		ArrayList<Item> groceryList = fillArrayList();
 		
 		
-		while(true) {
+		
 			int choice = menu(s);
 			
 			switch(choice) {
@@ -48,7 +48,7 @@ public class Prompt {
 		//sale units
 		//case versus 1
 		
-	}
+	
 	
 	public static void editExistingItem(Item I, Scanner s) {
 		String input;
@@ -135,25 +135,25 @@ public class Prompt {
 		groceryList.add(Rice);
 		
 		Item ToiletPaper = new Item("Toilet Paper", 0.55, 0.85, 0.85);
-	groceryList.add(ToiletPaper);
+		groceryList.add(ToiletPaper);
 	
-	Item Cashews = new Item("Cashews", 1.68, 2.95, 2.95);
-	groceryList.add(Cashews);
+		Item Cashews = new Item("Cashews", 1.68, 2.95, 2.95);
+		groceryList.add(Cashews);
 	
-	Item Tulip = new Item("Tulip", 0.10, 0.25, 0.25);
-	groceryList.add(Tulip);
+		Item Tulip = new Item("Tulip", 0.10, 0.25, 0.25);
+		groceryList.add(Tulip);
 	
-	Item Steak = new Item("Steak", 10.55, 15.45, 15.45);
-	groceryList.add(Steak);
+		Item Steak = new Item("Steak", 10.55, 15.45, 15.45);
+		groceryList.add(Steak);
 	
-	Item LightBulbs = new Item("Light Bulbs", 3.65, 6.05, 6.05);
-	groceryList.add(LightBulbs);
+		Item LightBulbs = new Item("Light Bulbs", 3.65, 6.05, 6.05);
+		groceryList.add(LightBulbs);
 	
-	Item SaladDressing = new Item("Salad Dressing", 4.56, 7.81, 7.81);
-	groceryList.add(SaladDressing);
+		Item SaladDressing = new Item("Salad Dressing", 4.56, 7.81, 7.81);
+		groceryList.add(SaladDressing);
 	
-	Item Floss = new Item("Floss", 0.35, 0.65, 0.65);
-	groceryList.add(Floss);
+		Item Floss = new Item("Floss", 0.35, 0.65, 0.65);
+		groceryList.add(Floss);
 		
 		return groceryList;
 			

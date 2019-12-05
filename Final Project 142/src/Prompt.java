@@ -8,26 +8,30 @@ public class Prompt {
 		ArrayList<Item> groceryList = fillArrayList();
 
 		String newValue = "";
+		Item I;
 		
 		System.out.println("Welcome to Grocery Pricing Management!");
 		
 		while (true) {
 			int choice = menu(s);
+			
 
 			switch (choice) {
 			case 1: // Create New Item
 				s.nextLine();
-				Item I = createItem(s);
+				I = createItem(s);
 				groceryList.add(I);
 				break;
 			case 2: // View Existing Items
 				s.nextLine();
 				I = selectItem(groceryList, s);
+				if(I == null) break;
 				I.printDetails();
 				break;
 			case 3: // Edit an Existing Item
 				s.nextLine();
 				I = selectItem(groceryList, s);
+				if(I == null) break;
 				editExistingItem(I, s);
 				break;
 			case 4: // Delete Item
@@ -35,6 +39,7 @@ public class Prompt {
 				groceryList = deleteItem(groceryList, s);
 				break;
 			case 5: // Quit
+				System.out.println("Goodbye");
 				return;
 			default:
 				System.out.println("/n/nINVALID, try again.");
@@ -49,7 +54,7 @@ public class Prompt {
 	public static ArrayList<Item> deleteItem(ArrayList<Item> groceryList, Scanner s) {
 		int i = 1;
 		int option = 0;
-		
+		// Why does this method have it's own "list of grocery items" logic? Shouldn't we just use the selectItem method?
 		System.out.println("List of Grocery Items");
 		for (i = 1; i <= groceryList.size(); ++i) {
 			System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
@@ -102,19 +107,24 @@ public class Prompt {
 		int i = 1;
 
 		while (true) {
-			System.out.println("List of Grocery Items");
+			System.out.println("\nEnter index from list of grocery items, or enter \"back\" to return to menu.\n");
 			for (i = 1; i <= groceryList.size(); ++i) {
 				System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
 			}
-
-			option = s.nextInt();
-
-			if (option < 0 || option > groceryList.size()) {
-				System.out.println("INVALID");
-				continue;
+			
+			if(s.hasNextInt()) {
+				option = s.nextInt();
+	
+				if (option < 0 || option > groceryList.size()) {
+					System.out.println("INVALID");
+					continue;
+				}
+	
+				return groceryList.get(--option);
+			}else {
+				s.nextLine();
+				return null;
 			}
-
-			return groceryList.get(--option);
 
 		}
 
@@ -179,9 +189,7 @@ public class Prompt {
 		int choice = 0;
 		
 		while (true) {
-			System.out.println();
-			System.out.println("What would you like to do?");
-			System.out.println();
+			System.out.println("\nWhat would you like to do?\n");
 			
 			System.out.println("1. Create New Item");
 			System.out.println("2. View Existing Items");

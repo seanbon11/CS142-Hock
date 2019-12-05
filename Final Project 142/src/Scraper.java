@@ -18,8 +18,7 @@ public class Scraper {
 		System.out.println(list.size());
 	}
 	
-	public static void loadNewItems(Scanner s, File f) {
-		ArrayList<Item> itemList = new ArrayList<>();
+	public static void loadNewItems(Scanner s) {
 		while (s.hasNextLine()) {
 			String line = s.nextLine();
 			if (line.startsWith("	<Description>")) {
@@ -27,27 +26,22 @@ public class Scraper {
 				continue;
 			}
 			if (line.startsWith("	<Cost>")) {
-				String cst = line.substring(line.indexOf(">")+1, line.indexOf("</"));
+				double cst = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
 			if (line.startsWith("	<RegularPrice>")) {
-				String retail = line.substring(line.indexOf(">")+1, line.indexOf("</"));
+				double retail = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
 			if (line.startsWith("	<SalePrice>")) {
-				String tpr = line.substring(line.indexOf(">")+1, line.indexOf("</"));
+				double tpr = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
-//			itemList<new Item(desc, cst, retail, tpr)> ;
 			
-			//This line is not working
-			//The goal is to enter the four terms scraped earlier into a new item.
-			//I don't know how to format ArrayLists. 
-			//Can anyone help with this?
+			//This is where we assemble the above variables into a value of the array.
+			//The array is stored in the Prompt class. 
 			
 		}
-		System.out.println(itemList);
-		System.out.println(itemList.size());
 	}
 	
 	

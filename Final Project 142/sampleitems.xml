@@ -48,4 +48,22 @@
 	<RegularPrice>5.99</RegularPrice>
 	<SalePrice>5.99</SalePrice>
   </ROW>
+   <ROW>
+	<Description>Ranch Dressing</Description>
+	<Cost>1.34</Cost>
+	<RegularPrice>1.99</RegularPrice>
+	<SalePrice>1.79</SalePrice>
+  </ROW>
+   <ROW>
+	<Description>Italian Dressing</Description>
+	<Cost>1.34</Cost>
+	<RegularPrice>1.99</RegularPrice>
+	<SalePrice>1.79</SalePrice>
+  </ROW>
+   <ROW>
+	<Description>French Dressing</Description>
+	<Cost>1.34</Cost>
+	<RegularPrice>1.99</RegularPrice>
+	<SalePrice>1.79</SalePrice>
+  </ROW>
 </TABLE>

@@ -63,6 +63,18 @@ public class Prompt {
 					if (item == null) break; // done with file
 					groceryList.add(item);
 				}
+				for(int i = 0; i < groceryList.size(); i++) {
+					Item testi = groceryList.get(i);
+					for(int j = 0; j < i; j++) {
+						Item testj = groceryList.get(j);
+						if(testj.getDescription().equalsIgnoreCase(testi.getDescription())) {
+							groceryList.remove(i);
+							i--;
+						}
+					}
+				}
+				System.out.println("File loaded and duplicates deleted.");
+				break;
 				
 			case 6: // Quit
 				// Write the file
@@ -228,12 +240,13 @@ public class Prompt {
 			System.out.println("2. View Existing Items");
 			System.out.println("3. Edit an Existing Item");
 			System.out.println("4. Delete Item");
-			System.out.println("5. Quit");
+			System.out.println("5. Insert Items from .xml file");
+			System.out.println("6. Quit");
 			System.out.print("\nEnter Number: ");
 
 			choice = s.nextInt();
 
-			if (choice > 5 || choice < 1) {
+			if (choice > 6 || choice < 1) {
 				System.out.println("\n\nINVALID, try again.");
 			} else {
 				break;

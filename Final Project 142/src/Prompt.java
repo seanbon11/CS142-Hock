@@ -61,22 +61,19 @@ public class Prompt {
 		System.out.print("What would you like to replace it with? ");
 		newValue = s.nextLine();
 		
-		if(input.equals("name") || input.equals("Name")) {
+		if(input.equalsIgnoreCase("name")) {
 			I.setDescription(newValue);
 		}
 		
-		if(input.equals("cost") || input.equals("Cost")) {
-			//System.out.println(input);
+		if(input.equalsIgnoreCase("cost")) {
 			I.setCost(Double.parseDouble(newValue));
 		}
 		
-		if(input.equals("regular price") || input.equals("Regular price") || 
-				input.equals("regular Price") || input.equals("Regular Price")) {
+		if(input.equalsIgnoreCase("regular price")) {
 			I.setRegularPrice(Double.parseDouble(newValue));
 		}
 		
-		if(input.equals("sale price") || input.equals("Sale price") || 
-				input.equals("sale Price") || input.equals("Sale Price")) {
+		if(input.equalsIgnoreCase("sale price")) {
 			I.setSalePrice(Double.parseDouble(newValue));
 		}
 

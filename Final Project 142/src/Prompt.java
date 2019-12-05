@@ -43,6 +43,7 @@ public class Prompt {
 		String newInput;
 		System.out.print("What new value would you like to replace X with? ");
 		newInput = s.nextLine();
+		newInput = s.nextLine();
 		return newInput;
 		//FIXME not allowing input
 	}
@@ -50,6 +51,7 @@ public class Prompt {
 	public static void editExistingItem(Item I, Scanner s, String newValue) {
 		String input;
 		
+		//newValue = "6.0";
 		//add in sequential numbers to print
 		
 		System.out.println();

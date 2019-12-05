@@ -22,8 +22,8 @@ public class Prompt {
 			break;
 		case 3: // Edit an Existing Item
 			I = selectItem(groceryList, s);
-			newValue = selectNewValue(s);
-			editExistingItem(I, s, newValue);
+			//newValue = selectNewValue(s);
+			editExistingItem(I, s);
 			break;
 		case 4: //
 			break;
@@ -48,17 +48,18 @@ public class Prompt {
 		//FIXME not allowing input
 	}
 
-	public static void editExistingItem(Item I, Scanner s, String newValue) {
+	public static void editExistingItem(Item I, Scanner s) {
 		String input;
-		
-		//newValue = "6.0";
-		//add in sequential numbers to print
+		String newValue;
 		
 		System.out.println();
 		I.printDetails();
-		System.out.println();
+		System.out.print("Enter Property Name To Change: ");
+		input = s.nextLine();
 		input = s.nextLine();
 		
+		System.out.print("What would you like to replace it with? ");
+		newValue = s.nextLine();
 		
 		if(input.equals("name") || input.equals("Name")) {
 			I.setDescription(newValue);

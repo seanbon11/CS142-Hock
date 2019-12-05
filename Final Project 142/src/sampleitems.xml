@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TABLE>
+  <ROW>
+	<Description>White Rice</Description>
+	<Cost>0.68</Cost>
+	<RegularPrice>1.19</RegularPrice>
+	<SalePrice>0.99</SalePrice>
+  </ROW>
+  <ROW> 
+	<Description>2-ply Toilet Paper</Description>
+	<Cost>3.82</Cost>
+	<RegularPrice>7.99</RegularPrice>
+	<SalePrice>7.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>Whole Cashews</Description>
+	<Cost>2.88</Cost>
+	<RegularPrice>3.99</RegularPrice>
+	<SalePrice>3.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>Tulip Bouquet</Description>
+	<Cost>11.68</Cost>
+	<RegularPrice>19.99</RegularPrice>
+	<SalePrice>19.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>New York Strip Steak</Description>
+	<Cost>10.68</Cost>
+	<RegularPrice>21.99</RegularPrice>
+	<SalePrice>19.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>60W Light Bulb, 2-pack</Description>
+	<Cost>5.17</Cost>
+	<RegularPrice>9.99</RegularPrice>
+	<SalePrice>9.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>Ranch Dressing</Description>
+	<Cost>1.34</Cost>
+	<RegularPrice>1.99</RegularPrice>
+	<SalePrice>1.79</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>Dental Floss, 3-pack</Description>
+	<Cost>3.62</Cost>
+	<RegularPrice>5.99</RegularPrice>
+	<SalePrice>5.99</SalePrice>
+  </ROW>
+</TABLE>

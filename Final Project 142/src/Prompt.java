@@ -43,6 +43,7 @@ public class Prompt {
 		String newInput;
 		System.out.print("What new value would you like to replace X with? ");
 		newInput = s.nextLine();
+		newInput = s.nextLine();
 		return newInput;
 		//FIXME not allowing input
 	}
@@ -50,6 +51,7 @@ public class Prompt {
 	public static void editExistingItem(Item I, Scanner s, String newValue) {
 		String input;
 		
+		//newValue = "6.0";
 		//add in sequential numbers to print
 		
 		System.out.println();
@@ -57,21 +59,23 @@ public class Prompt {
 		System.out.println();
 		input = s.nextLine();
 		
-		if(input == "name" || input == "Name") {
+		
+		if(input.equals("name") || input.equals("Name")) {
 			I.setDescription(newValue);
 		}
 		
-		if(input == "cost" || input == "Cost") {
+		if(input.equals("cost") || input.equals("Cost")) {
+			//System.out.println(input);
 			I.setCost(Double.parseDouble(newValue));
 		}
 		
-		if(input == "regular price" || input == "Regular price" || 
-				input == "regular Price" || input == "Regular Price") {
+		if(input.equals("regular price") || input.equals("Regular price") || 
+				input.equals("regular Price") || input.equals("Regular Price")) {
 			I.setRegularPrice(Double.parseDouble(newValue));
 		}
 		
-		if(input == "sale price" || input == "Sale price" || 
-				input == "sale Price" || input == "Sale Price") {
+		if(input.equals("sale price") || input.equals("Sale price") || 
+				input.equals("sale Price") || input.equals("Sale Price")) {
 			I.setSalePrice(Double.parseDouble(newValue));
 		}
 

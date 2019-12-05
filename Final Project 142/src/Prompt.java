@@ -26,7 +26,7 @@ public class Prompt {
 				editExistingItem(I, s);
 				break;
 			case 4: // Delete Item
-				groceryList = deleteItem(groceryList);
+				groceryList = deleteItem(groceryList, s);
 				break;
 			case 5: // Quit
 				return;
@@ -40,14 +40,19 @@ public class Prompt {
 
 	}
 	
-	public static ArrayList<Item> deleteItem(ArrayList<Item> groceryList) {
+	public static ArrayList<Item> deleteItem(ArrayList<Item> groceryList, Scanner s) {
 		int i = 1;
+		int option = 0;
+		
 		System.out.println("List of Grocery Items");
 		for (i = 1; i <= groceryList.size(); ++i) {
 			System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
 		}
 
+		System.out.print("\nEnter Number: ");
+		option = s.nextInt();
 		
+		groceryList.remove(--option);
 		
 		return groceryList;
 	}

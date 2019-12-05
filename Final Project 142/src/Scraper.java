@@ -18,6 +18,7 @@ public class Scraper {
 		System.out.println(list.size());
 	}
 	
+	
 	public static void loadNewItems(Scanner s) {
 		while (s.hasNextLine()) {
 			String line = s.nextLine();

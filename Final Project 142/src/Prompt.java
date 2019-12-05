@@ -55,18 +55,16 @@ public class Prompt {
 				groceryList = deleteItem(groceryList, s);
 				break;
 				
-			/*case 4.5 : //Load items by .xml files
-			 * s.nextLine();
-			 * 
-			 * 
-			 * 
-			 * Item I = createItem(s)
-			 * groceryList.add(I);
-			 * 
-			 * 
-			 * 	*/
+			case 5: //read in XML
+				File items = new File("sampleitems.xml");
+				Scanner t = new Scanner(items);
+				while(t.hasNextLine()) {
+					Item item = Scraper.loadNewItem(t);
+					if (item == null) break; // done with file
+					groceryList.add(item);
+				}
 				
-			case 5: // Quit
+			case 6: // Quit
 				// Write the file
 				PrintWriter fileWriter = new PrintWriter(new File("items.txt"));
 				for (Item item : groceryList) {
@@ -162,6 +160,8 @@ public class Prompt {
 		}
 
 	}
+	
+	
 
 	public static Item createItem(Scanner s) {
 		String inputStr = "";

@@ -20,29 +20,34 @@ public class Scraper {
 	
 	
 	public static void loadNewItems(Scanner s) {
+		
 		while (s.hasNextLine()) {
 			String line = s.nextLine();
+			String desc = "desc";
+			double cst = 0.0;
+			double retail = 0.0;
+			double tpr = 0.0;
 			if (line.startsWith("	<Description>")) {
-				String desc = line.substring(line.indexOf(">")+1, line.indexOf("</"));
+				desc = line.substring(line.indexOf(">")+1, line.indexOf("</"));
 				continue;
 			}
 			if (line.startsWith("	<Cost>")) {
-				double cst = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
+				cst = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
 			if (line.startsWith("	<RegularPrice>")) {
-				double retail = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
+				retail = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
 			if (line.startsWith("	<SalePrice>")) {
-				double tpr = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
+				tpr = Double.valueOf(line.substring(line.indexOf(">")+1, line.indexOf("</")));
 				continue;
 			}
 			
-			//This is where we assemble the above variables into a value of the array.
-			//The array is stored in the Prompt class. 
+//			Item ""+desc"" = new Item(desc, cst, retail, tpr);
 			
 		}
+		
 	}
 	
 	

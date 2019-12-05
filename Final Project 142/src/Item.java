@@ -183,7 +183,7 @@ public class Item {
 		return regularPrice / unitSize;
 	}
 	
-	public void printDetails() {
+	public void printDetails(/* Should we put "item I" in here? */) {
 		System.out.println("Name: "+getDescription());
 		System.out.println("Cost: "+getCost());
 		System.out.println("Regular Price: "+getRegularPrice());

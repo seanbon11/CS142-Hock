@@ -32,6 +32,18 @@ public class Prompt {
 				s.nextLine();
 				groceryList = deleteItem(groceryList, s);
 				break;
+				
+			/*case 4.5 : //Load items by .xml files
+			 * s.nextLine();
+			 * 
+			 * 
+			 * 
+			 * Item I = createItem(s)
+			 * groceryList.add(I);
+			 * 
+			 * 
+			 * 	*/
+				
 			case 5: // Quit
 				return;
 			default:

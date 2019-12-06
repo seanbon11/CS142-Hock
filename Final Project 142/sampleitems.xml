@@ -66,4 +66,17 @@
 	<RegularPrice>1.99</RegularPrice>
 	<SalePrice>1.79</SalePrice>
   </ROW>
+  <ROW>
+	<Description>Ham and Cheese Sandwich</Description>
+	<Cost>3.13</Cost>
+	<RegularPrice>4.99</RegularPrice>
+	<SalePrice>4.99</SalePrice>
+  </ROW>
+  <ROW>
+	<Description>Hot Chicken Tenders</Description>
+	<Cost>4.27</Cost>
+	<RegularPrice>7.99</RegularPrice>
+	<SalePrice>7.99</SalePrice>
+  </ROW>
 </TABLE>
+

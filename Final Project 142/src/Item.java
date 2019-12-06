@@ -5,7 +5,7 @@ public class Item {
 	private double cost;
 	private double regularPrice;
 	private double salePrice;
-	private double profitMargin;
+	//private double profitMargin;
 	
 
 		// All of these variables seem unnecessary for the main purpose of presentation. 
@@ -43,7 +43,6 @@ public class Item {
 		this.cost = cost;
 		this.regularPrice = regularPrice;
 		this.salePrice = salePrice;
-		this.profitMargin = (Math.round(((salePrice-cost)/salePrice)*1000)/10);
 	}
 	
 	Item() {} //initialiaze all to 0
@@ -89,7 +88,8 @@ public class Item {
 	}
 	
 	public double getProfitMargin() {
-		return this.profitMargin;
+		return (Math.round(((salePrice-cost)/salePrice)*1000)/10);
+
 	}
 	
 //	public String getBrand() {

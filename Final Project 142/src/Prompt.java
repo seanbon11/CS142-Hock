@@ -6,9 +6,12 @@ import java.util.Scanner;
 
 public class Prompt {
 
+
+	static ArrayList<Item> groceryList = new ArrayList<>();
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		// Load an item file
-		ArrayList<Item> groceryList = new ArrayList<>();
+		
 		Scanner itemFile = new Scanner(new File("items.txt"));
 		itemFile.useDelimiter("[~\n\r]+");
 		while (itemFile.hasNext()) {
@@ -38,22 +41,22 @@ public class Prompt {
 				break;
 			case 2: // View Existing Items
 				s.nextLine();
-				I = selectItem(groceryList, s);
+				I = selectItem(s);
 				if(I == null) break;
 				I.printDetails();
 				break;
 			case 3: // Edit an Existing Item
 				s.nextLine();
-				I = selectItem(groceryList, s);
+				I = selectItem(s);
 				if(I == null) break;
 				editExistingItem(I, s);
 				break;
 			case 4: // Delete Item
 				s.nextLine();
-				groceryList = deleteItem(groceryList, s);
+			
+				groceryList = deleteItem(s);
 				break;
-				
-			case 5: //read in XML
+			case 5: //	read in XML
 				File items = new File("sampleitems.xml");
 				Scanner t = new Scanner(items);
 				while(t.hasNextLine()) {
@@ -92,10 +95,9 @@ public class Prompt {
 		}
 	}
 	
-	public static ArrayList<Item> deleteItem(ArrayList<Item> groceryList, Scanner s) {
+	public static ArrayList<Item> deleteItem(Scanner s) {
 		int i = 1;
 		int option = 0;
-		// Why does this method have it's own "list of grocery items" logic? Shouldn't we just use the selectItem method?
 		System.out.println("List of Grocery Items");
 		for (i = 1; i <= groceryList.size(); ++i) {
 			System.out.println("" + i + ". " + groceryList.get(i - 1).getDescription());
@@ -143,7 +145,7 @@ public class Prompt {
 
 	}
 
-	public static Item selectItem(ArrayList<Item> groceryList, Scanner s) {
+	public static Item selectItem(Scanner s) {
 		int option = -1;
 		int i = 1;
 

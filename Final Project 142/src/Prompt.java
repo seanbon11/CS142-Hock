@@ -75,6 +75,9 @@ public class Prompt {
 					}
 				}
 				System.out.println("File loaded and duplicates deleted.");
+				System.out.println();
+				System.out.println();
+				System.out.println();
 				break;
 				
 			case 6: // Quit

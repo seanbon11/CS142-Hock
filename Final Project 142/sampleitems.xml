@@ -78,5 +78,17 @@
 	<RegularPrice>7.99</RegularPrice>
 	<SalePrice>7.99</SalePrice>
   </ROW>
+   <ROW>
+	<Description>Hot Chicken Tenders</Description>
+	<Cost>4.27</Cost>
+	<RegularPrice>7.99</RegularPrice>
+	<SalePrice>7.99</SalePrice>
+  </ROW>
+   <ROW>
+	<Description>Hot Chicken Tenders</Description>
+	<Cost>4.27</Cost>
+	<RegularPrice>7.99</RegularPrice>
+	<SalePrice>7.99</SalePrice>
+  </ROW>
 </TABLE>
 
